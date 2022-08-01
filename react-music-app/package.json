@@ -16,9 +16,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --setupFilesAfterEnv ./src/test/setupTests.js --watchAll=false",
     "eject": "react-scripts eject",
     "webpack": "webpack"
+    
   },
   "eslintConfig": {
     "extends": [
