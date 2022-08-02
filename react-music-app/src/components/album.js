@@ -30,15 +30,14 @@ function Album() {
       getData()
   },[])
  const [color, setColor] = useState('blue');
- const [trigger, setTrigger] = useState(false);
+
  useEffect (() => {
   console.log('hello')
   const red = Math.floor(Math.random()*255);
   const blue = Math.floor(Math.random()*255);
   const green = Math.floor(Math.random()*255);
-  setColor(`rgb(${red}, ${green}, ${blue})`)
-  setTimeout(() => (setTrigger(prv => !prv)), 5000)
- }, [trigger])
+  setTimeout(() => (setColor(`rgb(${red}, ${green}, ${blue})`)), 5000)
+ }, [color])
 
   return (
     <div>
