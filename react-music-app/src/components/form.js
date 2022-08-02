@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Form() {
     const [formData, setFormData] = useState({username: '', password: ''})
@@ -12,6 +13,11 @@ function handleFormSubmit(e){
     e.target.password.value = '';
 
 }
+ useEffect(() => {
+
+ }),[]
+
+
 
   return (
 <>
@@ -21,6 +27,7 @@ function handleFormSubmit(e){
     <input type='submit' value='Submit' />
 </form>
 <p role="formDisplay">{formData.username}{formData.password}</p>
+<div></div>
 </>
   )
 }
