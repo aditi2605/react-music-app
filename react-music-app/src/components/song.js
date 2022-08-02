@@ -2,21 +2,28 @@ import React, { useState } from 'react';
 
 const Song = ({name}) => {
     const [liked, setLiked] = useState();
+    const [disliked, setdisliked] = useState();
 
-    const changeLike = (e) => {
-        if (liked){
-            setLiked(prevlike => !prevlike);
-            e.target.style.backgroundColor = 'white'
-
-        } else{
-            setLiked(prevlike => !prevlike);
-            e.target.style.backgroundColor = 'green'
-        }
+    const likeBtn = e => {
+        e.preventDefault()
+        setLiked(prevLiked => !prevLiked)
+        e.target.style.color = 'blue';
+        console.log('hello')
     }
 
+    const DislikeBtn = e => {
+        e.preventDefault()
+        setdisliked(prevdisliked => !prevdisliked)
+        e.target.style.color = 'blue';
+    }
+
+
+
     return (
-        <li onClick={changeLike} className="listItem">
+        <li className="listItem">
         {name}
+        <button type='button' onClick= {likeBtn} className='thumbsUp'><i class="fa-solid fa-thumbs-up"></i></button>
+        <button type='button' onClick= {DislikeBtn} className='thumbsDown' ><i class="fa-solid fa-thumbs-down"></i></button>
         </li> 
     );
 }

@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 
 function Form() {
-    const [formData, setFomData] = useState({username: '', password: ''})
+    const [formData, setFormData] = useState({username: '', password: ''})
 
-    const handleInput = e => {
-        const { name, value } = e.target;
-        setFormData
-    }
+ 
+function handleFormSubmit(e){
+    e.preventDefault()
+    setFormData({username: e.target.username.value, password: e.target.password.value})
+}
+
   return (
 <>
-<form onsubmit={handleFormSubmit}>
-    <input type='text' name='nameInput' placeholder='enter your name'
-    value={formData.username} onchange={handleInput} />
-    <input type='password' name='password' value={formData.password} onchange={handleInput} />
+<form onSubmit={handleFormSubmit}>
+    <input type='text' name='username' placeholder='enter your name' />
+    <input type='password' name='password' />
     <input type='submit' value='Submit' />
 </form>
+<p>{formData.username}{formData.password}</p>
 </>
   )
 }

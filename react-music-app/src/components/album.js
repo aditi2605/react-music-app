@@ -12,8 +12,6 @@ function Album() {
       <ul>
         {songs}
       </ul>
-      <button type='button' className='thumbsUp'><i class="fa-solid fa-thumbs-up"></i></button>
-      <button type='button' className='thumbsDown' ><i class="fa-solid fa-thumbs-down"></i></button>
     </div>
   )
 }
