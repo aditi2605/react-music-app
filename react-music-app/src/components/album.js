@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Song from './song'
+import axios from 'axios'
 
 function Album() {
 
@@ -12,13 +13,46 @@ function Album() {
 
   let songs = songList.map((song, i) => <Song name={song} key={i} clickFunction = {removeSong} />)
 
+    const [data, setData] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+        try{
+          const { data } = await axios.get("https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime", {headers: {
+            'Access-Control-Allow-Origin': '*',
+          }} )
+          console.log(data)
+          setData(data)
+        } catch (e) {
+          console.warn(`Oops. ${e.message}`)
+        }
+      }
+      getData()
+  },[])
+ const [color, setColor] = useState('blue');
+ const [trigger, setTrigger] = useState(false);
+ useEffect (() => {
+  console.log('hello')
+  const red = Math.floor(Math.random()*255);
+  const blue = Math.floor(Math.random()*255);
+  const green = Math.floor(Math.random()*255);
+  setColor(`rgb(${red}, ${green}, ${blue})`)
+  setTimeout(() => (setTrigger(prv => !prv)), 5000)
+ }, [trigger])
 
   return (
     <div>
       <h1 className="titleHeading">Title : Weeknd's best albums </h1>
-      <ul>
+      <ul style= {{backgroundColor: color}}>
         {songs}
       </ul>
+      {data ? (
+        <div>
+          <p>{data.lyrics}</p>
+        </div>
+      ) : (
+        <main></main>
+      )}
     </div>
   )
 }
