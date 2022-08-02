@@ -6,12 +6,8 @@ function Album() {
   const [songList, setSongList] = useState(['Kiss Land, 2013', 'My Dear Melancholy, 2018', 'Echoes of Slience, 2011', 'Starboy, 2016','Dawn FM, 2022', 'Beauty Behind the Madness, 2015', 'After Hours, 2020', 'Thursday, 2011']);
 
   const removeSong = (name) => {
-    const songToRemove = songList.indexOf(name)
-    // setSongList(songList.slice(0, songToRemove).concat(songList.slice(songToRemove+1)))
     const newList = songList.filter(song => song !== name)
-    console.log(newList)
     setSongList(newList)
-    // songs.splice(3,1);
   }
 
   let songs = songList.map((song, i) => <Song name={song} key={i} clickFunction = {removeSong} />)

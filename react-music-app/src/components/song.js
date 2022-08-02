@@ -24,8 +24,8 @@ const Song = ({name, clickFunction}) => {
     return (
         <li className="listItem" role={name} >
         <span>{name}</span>
-        <button type='button' role="likeBtn" style={liked ? {color: 'hotpink'} : {}} onClick= {likeBtn} className='thumbsUp'><i className="fa-solid fa-thumbs-up"></i></button>
-        <button type='button' role="dislikeBtn" onClick= {dislikeBtn} className='thumbsDown' ><i className="fa-solid fa-thumbs-down"></i></button>
+        <button type='button' role="likeBtn" style={liked ? {color: 'blue'} : {}} onClick= {likeBtn} className='thumbsUp'><i className="fa-solid fa-thumbs-up"></i></button>
+        <button type='button' role="dislikeBtn" style={liked ? {color: 'blue'} : {}} onClick= {dislikeBtn} className='thumbsDown' ><i className="fa-solid fa-thumbs-down"></i></button>
         <button type='button' role="deleteBtn" onClick= {() => clickFunction(name)} className='thumbsDown' ><i className="fa-solid fa-trash-can"></i></button>
         </li> 
     );
