@@ -7,13 +7,15 @@ function Album() {
 
   const removeSong = (name) => {
     const songToRemove = songList.indexOf(name)
-    setSongList(songList.slice(0, songToRemove).concat(songList.slice(songToRemove+1)))
+    // setSongList(songList.slice(0, songToRemove).concat(songList.slice(songToRemove+1)))
+    const newList = songList.filter(song => song !== name)
+    console.log(newList)
+    setSongList(newList)
     // songs.splice(3,1);
   }
 
-  let songs = songList.map(song => <Song name={song} clickFunction = {removeSong}/>)
+  let songs = songList.map((song, i) => <Song name={song} key={i} clickFunction = {removeSong} />)
 
-  
 
   return (
     <div>
