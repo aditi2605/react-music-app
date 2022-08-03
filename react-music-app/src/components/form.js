@@ -15,9 +15,9 @@ function handleFormSubmit(e){
   return (
 <>
 <form onSubmit={handleFormSubmit}>
-    <input type='text' name='username' placeholder='enter your name' />
-    <input type='password' name='password' placeholder='enter your password' />
-    <input type='submit' value='Submit' />
+    <input type='text' name='username' placeholder='Enter Your Name' />
+    <input type='password' name='password' placeholder='Enter Your Password' />
+    <input type='submit' className='submitBtn' value='Submit' />
 </form>
 <p role="formDisplay">{formData.username}{formData.password}</p>
 </>

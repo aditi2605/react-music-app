@@ -1,5 +1,57 @@
-h1 {
-  color: red;
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h3 {
+  color:black;
   justify-content: center;
+  
+  text-decoration: underline;
+
+}
+
+li {
+  font-size: 1.2rem;
+  color:black;
+  font-weight: 500;
+  text-align: justify;
+  letter-spacing: 1.5;
+  display: flex;
+}
+
+.thumbsUp {
+  margin:5px;
+  padding: 3px;
+}
+
+.thumbsDown {
+  margin:5px;
+  padding: 3px;
+}
+
+.deleteBtn {
+  margin:5px;
+  padding: 3px;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 5px;
+  font-size: 1.1rem;
+}
+
+.submitBtn {
+  padding: 2px;
+  width: 190px;
+}
+
+p {
+  font-size: 1rem;
+  display: flex;
+  text-align: justify;
 
 }

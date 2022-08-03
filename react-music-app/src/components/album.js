@@ -29,20 +29,31 @@ function Album() {
       }
       getData()
   },[])
- const [color, setColor] = useState('blue');
- const [trigger, setTrigger] = useState(false);
+
+ const [color, setColor] = useState(false);
+//  const [trigger, setTrigger] = useState(false);
+
  useEffect (() => {
   console.log('hello')
   const red = Math.floor(Math.random()*255);
   const blue = Math.floor(Math.random()*255);
   const green = Math.floor(Math.random()*255);
-  setColor(`rgb(${red}, ${green}, ${blue})`)
-  setTimeout(() => (setTrigger(prv => !prv)), 5000)
- }, [trigger])
+  setTimeout(() => (setColor(`rgb(${red}, ${green}, ${blue})`)), 5000)
+ }, [color])
+
+
+//  useEffect (() => {
+//   console.log('hello')
+//   const red = Math.floor(Math.random()*255);
+//   const blue = Math.floor(Math.random()*255);
+//   const green = Math.floor(Math.random()*255);
+//   setColor(`rgb(${red}, ${green}, ${blue})`)
+//   setTimeout(() => (setTrigger(prev => !prev)), 5000)
+//  }, [trigger])
 
   return (
     <div>
-      <h1 className="titleHeading">Title : Weeknd's best albums </h1>
+      <h2 className="titleHeading">Title : Weeknd's best albums </h2>
       <ul style= {{backgroundColor: color}}>
         {songs}
       </ul>
