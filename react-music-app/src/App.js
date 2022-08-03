@@ -18,6 +18,7 @@ function App() {
       <Route path="/" element={<Pages.HomePage />} />
       <Route path="/artists" element={<Pages.ArtistPage />} />
       <Route path="/albums" element={<Pages.AlbumPage />} />
+      <Route path="/albums/:id" element={<Pages.SongPage />} />
       <Route path="/*" element={<Pages.ErrorPage />} />
       </Route>
       </Routes>
